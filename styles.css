@@ -1,0 +1,123 @@
+body{
+	font-family: sans-serif;
+	color: #fff;
+}
+
+.hidden{
+	opacity: 0;
+}
+
+.click {
+	cursor:pointer;
+}
+
+.absolute {
+	position: absolute;
+}
+
+#banner {
+	background: #f3f3f3;
+	position: relative;
+	overflow: hidden;
+}
+
+#main-click {
+	position: absolute;
+}
+
+#cta
+{
+	background-color:green;
+	border-bottom: 3px solid green;
+	border-radius: 10px;
+	font-size: 14px;
+	bottom: 10px;
+	left: 5px;
+	padding: 15px 15px;
+	margin: 0px 50px 10px 0px;
+	width: 50%;
+	height: 40px;
+	text-align: center;
+	z-index: 100;
+	
+}
+
+#cta:active
+{
+	transform: translate(0px,5px);
+	-webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+
+#logo1 {
+	
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	/* height: 250px; */
+	
+
+	
+}
+
+#item{
+	/* top: 0px; */
+	position:absolute;
+	bottom:0;
+	right:0;
+	
+	/* width: 100px; */
+	
+     
+}
+
+#bg1 {
+	/* right: 0; */
+	/* width:100%; */
+}
+
+#bg2 {
+	/* left: 0; */
+	
+}
+
+.copy {
+	font-size: 25px;
+	padding: 8px 5px;
+}
+
+#copy-1 {
+	padding-top: 5px;
+	padding: 200px 0;
+	margin: 20px;
+	
+	}
+
+
+#copy-2 {
+	/* color:#666; */
+	padding: 200px 0;
+	margin: 20px;
+}
+
+#copy-3{
+	text-shadow: 2px 2px #666;
+	padding: 200px 0;
+	margin: 20px;
+
+
+}
+
+#copy-4{
+	text-shadow: 2px 2px #666;
+	padding: 200px 0;
+	margin: 20px;
+
+}
+
+#copy-5{
+	text-shadow: 2px 2px #666;
+	padding: 190px 0;
+	margin: 20px;
+
+}

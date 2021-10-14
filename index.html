@@ -1,0 +1,168 @@
+<!doctype html> 
+<html> 
+	<head>
+		<script src="https://s0.2mdn.net/ads/studio/Enabler.js" type="text/javascript"></script>	
+		<meta charset="utf-8"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+		<title>proje</title>
+		<script language="javascript">
+		
+			if (Enabler.isInitialized()) {
+				init();
+			} else {
+				Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
+			}
+	
+			function init(){
+				if(Enabler.isPageLoaded()){
+					politeInit();
+				}else{
+					Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, politeInit);
+				} 
+			}
+			
+			function politeLoad(urls, onComplete) {
+			    var l = urls.length,
+			        loaded = 0,
+			        checkProgress = function() {
+			            if (++loaded === l && onComplete) {
+			                onComplete();
+			            }
+			        },
+			        i;
+			    for (i = 0; i < l; i++) {
+			    	
+			        Enabler.loadScript(urls[i], checkProgress);
+			    }
+			}
+		
+			function politeInit(){
+				politeLoad(['https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js',
+				            'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js',
+				            'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js',
+				            'script.js'], function() {
+				            	Banner.init();
+				           });
+
+				//Load in CSS
+				var extCSS=document.createElement('link');
+				extCSS.setAttribute("rel", "stylesheet");
+				extCSS.setAttribute("type", "text/css");
+				extCSS.setAttribute("href", Enabler.getUrl("styles.css")); 
+				document.getElementsByTagName("head")[0].appendChild(extCSS);
+				document.getElementById("banner").style.opacity=1;
+				document.getElementById("loader-container").style.opacity=0;
+				document.getElementById("loader-container").style.display = "none";
+				document.getElementById("banner").style.display = "block";
+			};
+		</script>
+		<style>
+		html, body{ margin: 0; padding: 0; }
+		html { box-sizing: border-box; }
+		*, *:before, *:after { box-sizing: inherit; }
+		.size { width: 400px; height: 500px; }
+		#loader-container{position:relative;}
+		#loader-container, #banner{border: 1px #666666 solid;}
+		#loader-container, .loader:before, .loader:after {background:#77ccff;}
+		.loader, .loader:before, .loader:after {
+		  border-radius: 100%;
+		}
+		.loader:before, .loader:after {
+		  position: absolute;
+		  content: '';
+		}
+		.loader:before {
+		  width: 5.2em;
+		  height: 10.2em;
+		  border-radius: 10.2em 0 0 10.2em;
+		  top: -0.1em;
+		  left: -0.1em;
+		  -webkit-transform-origin: 5.2em 5.1em;
+		  transform-origin: 5.2em 5.1em;
+		  -webkit-animation: load2 2s infinite ease 1.5s;
+		  animation: load2 2s infinite ease 1.5s;
+		}
+		.loader {
+		  font-size: 11px;
+		  text-indent: -99999em;
+		  margin: 70px auto;
+		  position: absolute;
+		  width: 10em;
+		  height: 10em;
+		  right: 0;
+		  left: 0;
+		  box-shadow: inset 0 0 0 1em #f3f3f3;
+		  -webkit-transform: translateZ(0);
+		  -ms-transform: translateZ(0);
+		  transform: translateZ(0);
+		}
+		.loader:after {
+		  width: 5.2em;
+		  height: 10.2em;
+		  border-radius: 0 10.2em 10.2em 0;
+		  top: -0.1em;
+		  left: 5.1em;
+		  -webkit-transform-origin: 0px 5.1em;
+		  transform-origin: 0px 5.1em;
+		  -webkit-animation: load2 2s infinite ease;
+		  animation: load2 2s infinite ease;
+		}
+		@-webkit-keyframes load2 {
+		  0% {
+		    -webkit-transform: rotate(0deg);
+		    transform: rotate(0deg);
+		  }
+		  100% {
+		    -webkit-transform: rotate(360deg);
+		    transform: rotate(360deg);
+		  }
+		}
+		@keyframes load2 {
+		  0% {
+		    -webkit-transform: rotate(0deg);
+		    transform: rotate(0deg);
+		  }
+		  100% {
+		    -webkit-transform: rotate(360deg);
+		    transform: rotate(360deg);
+		  }
+		}
+		</style>
+	</head> 
+	<body>
+
+		<div id="loader-container" class="size">
+			<div class="loader">
+		
+			</div>
+		</div>
+
+		<div id="banner" class="size" style="display:none;opacity:0;">
+
+			<img id="bg1" class="absolute hidden" src="bg1.jpg">
+			<div id="copy-1" class="copy absolute hidden">WANT HEALTIER<br> PLANTS?</div>
+
+			<img id="bg2" class="absolute hidden" src="bg2.jpg">
+			<div id="copy-2" class="copy absolute hidden">A LITTLE <br>DROP IS THIS.</div>
+
+			
+			<img id="product1" class="absolute hidden" src="bg1.jpg">
+			<div id="copy-3" class="copy absolute hidden">GROWS THEM<br> TWICE AS BIG.</div>
+
+			<img id="product2" class="absolute hidden" src="bg2.jpg">
+			<div id="copy-4" class="copy absolute hidden">MIRACLE-GRO&REG<br> ALL PURPOSE <br>PLANET FOOD.</div>
+
+			<img id="product4" class="absolute hidden" src="bg2.jpg">
+			<div id="copy-5" class="copy absolute hidden">PLANTS NEED <br>LOVE MIRACLE- <br>GRO &REG</div>
+
+			
+
+			<img id="logo1" class="absolute" src="logo1.png">
+
+			<div id="main-click" class="size absolute click"></div>
+			<div id="cta" class="absolute hidden click" style="cursor: pointer;" onClick="window.open('https://www.miraclegro.com/en-us', '_blank')">GET GROWING HERE --></div>
+			<img id="item" class="absolute" src="product.jpg">
+
+		</div>
+	</body> 
+</html> 
